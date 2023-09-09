@@ -2,6 +2,7 @@ package info.salma.service;
 
 import info.salma.entity.Department;
 import info.salma.repository.DepartmentRepository;
+import info.salma.request.DepartmentRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,11 @@ public class DepartmentServiceImpl implements DepartmentService{
 
     // Save operation
     @Override
-    public Department saveDepartment(Department department) {
+    public Department saveDepartment(DepartmentRequest departmentRequest) {
+        Department department = new Department();
+        department.setDepartmentName(departmentRequest.getDepartmentName());
+        department.setDepartmentAddress(departmentRequest.getDepartmentAddress());
+        department.setDepartmentCode(departmentRequest.getDepartmentCode());
         return departmentRepository.save(department);
     }
     // read operation

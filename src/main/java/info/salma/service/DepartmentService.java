@@ -1,12 +1,13 @@
 package info.salma.service;
 
 import info.salma.entity.Department;
+import info.salma.request.DepartmentRequest;
 
 import java.util.List;
 
 public interface DepartmentService {
     //save operation
-    Department saveDepartment(Department department);
+    Department saveDepartment(DepartmentRequest departmentRequest);
 
     //read operation
     List<Department> fetchDepartmentList();
